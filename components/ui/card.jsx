@@ -14,7 +14,7 @@ const Card = () => {
           <h2 class="text-2xl sm:text-3xl  font-extrabold text-gray-900 mb-4">
             Blog Post Title
           </h2>
-          <p class="text-gray-700 text-base sm:text-md mb-4">
+          <p class="text-gray-800 text-base sm:text-md mb-4">
             Your engaging and informative blog post description goes here. It's
             designed to grab readers' attention and provide valuable insights.
           </p>

@@ -5,14 +5,11 @@ import React from "react";
 const page = () => {
   return (
     <>
-      <div className="max-w-3xl m-auto w-[92%]">
-        <Nav />
-        <div className="pt-8 pb-14">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </div>
+      <div className="pt-8 pb-14">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </div>
     </>
   );
