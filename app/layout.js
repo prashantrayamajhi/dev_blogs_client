@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={classNames(inter.className, "max-w-3xl m-auto w-[92%]")}>
+      <body className={classNames(inter.className, "max-w-5xl m-auto w-[92%]")}>
         <Nav />
         {children}
       </body>

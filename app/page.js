@@ -1,15 +1,23 @@
-import Nav from "@/components/Nav";
 import Card from "@/components/ui/card";
-import React from "react";
+import Axios from "@/api/server";
 
-const page = () => {
+const fetchBlogs = async () => {
+  try {
+    const res = await Axios.get("/blogs");
+    return res.data.data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const page = async () => {
+  const blogs = await fetchBlogs();
   return (
     <>
       <div className="pt-8 pb-14">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {blogs.map((item) => {
+          return <Card key={item.id} blog={item} />;
+        })}
       </div>
     </>
   );
