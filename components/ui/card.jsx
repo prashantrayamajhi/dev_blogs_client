@@ -4,7 +4,7 @@ import React from "react";
 const Card = ({ blog }) => {
   return (
     <>
-      <Link href={`/blog/${blog.id}`}>
+      <Link href={`/blog/${blog.slug}`}>
         <div class="bg-white w-full max-w-screen-lg mx-auto border-t-4 border-blue-500 p-4 sm:p-6 pb-8 pt-6 rounded-lg shadow-lg mb-10">
           <div class="mb-4 ">
             <span class="inline-block py-1 px-2 border border-blue-500 rounded-md text-blue-500 text-xs sm:text-sm font-semibold hover:bg-blue-500 hover:text-white hover:border-transparent transition duration-300 ease-in-out">

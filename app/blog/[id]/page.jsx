@@ -2,7 +2,7 @@ import Axios from "@/api/server";
 
 const fetchBlog = async (id) => {
   try {
-    const res = await Axios.get(`/blogs/${id}`);
+    const res = await Axios.get(`/blogs/slug/${id}`);
     return res.data.data;
   } catch (err) {
     console.log(err);
