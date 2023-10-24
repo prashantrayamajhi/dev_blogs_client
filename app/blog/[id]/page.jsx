@@ -21,16 +21,18 @@ const Blog = async ({ params }) => {
   metadata.description = blog.previewText;
 
   return (
-    <div className="prose prose-slate prose-lg max-w-screen-lg  pt-7 pb-20 ">
-      <h1>{blog.title}</h1>
-      <p>{blog.previewText}</p>
-      <article
-        className="mt-5"
-        dangerouslySetInnerHTML={{
-          __html: blog.blog,
-        }}
-      ></article>
-    </div>
+    <>
+      <div className="prose prose-slate prose-md md:prose-lg max-w-screen-lg  pt-7 pb-20 dark:prose-invert">
+        <h1>{blog.title}</h1>
+        <p>{blog.previewText}</p>
+        <article
+          className="mt-5"
+          dangerouslySetInnerHTML={{
+            __html: blog.blog,
+          }}
+        ></article>
+      </div>
+    </>
   );
 };
 
