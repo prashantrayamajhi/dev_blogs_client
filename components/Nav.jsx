@@ -7,7 +7,6 @@ import { useTheme } from "next-themes";
 
 const Nav = () => {
   const { setTheme, theme } = useTheme();
-  const [mode, setMode] = useState("dark");
 
   return (
     <div className="flex justify-between align-middle  py-5">

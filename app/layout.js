@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body className={classNames(inter.className, "max-w-5xl m-auto w-[92%]")}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
