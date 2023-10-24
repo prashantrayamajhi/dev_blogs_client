@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import classNames from "classnames";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,8 +15,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={classNames(inter.className, "max-w-5xl m-auto w-[92%]")}>
-        <Nav />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Nav />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
