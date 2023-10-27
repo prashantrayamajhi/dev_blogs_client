@@ -1,8 +1,10 @@
 import Axios from "@/api/server";
 
-const fetchBlog = async (id) => {
+const fetchBlog = async (id, metadata) => {
   try {
     const res = await Axios.get(`/blogs/slug/${id}`);
+    metadata.title = res.data.data.title;
+    metadata.description = res.data.data.description;
     return res.data.data;
   } catch (err) {
     console.log(err);
@@ -15,10 +17,7 @@ export const metadata = {
 };
 
 const Blog = async ({ params }) => {
-  const blog = await fetchBlog(params.id);
-
-  metadata.title = blog.title;
-  metadata.description = blog.previewText;
+  const blog = await fetchBlog(params.id, metadata);
 
   return (
     <>
