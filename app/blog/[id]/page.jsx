@@ -1,23 +1,23 @@
 import Axios from "@/api/server";
 
-const fetchBlog = async (id, metadata) => {
+const fetchBlog = async (id) => {
   try {
     const res = await Axios.get(`/blogs/slug/${id}`);
-    metadata.title = res.data.data.title;
-    metadata.description = res.data.data.description;
+    // metadata.title = res.data.data.title;
+    // metadata.description = res.data.data.description;
     return res.data.data;
   } catch (err) {
     console.log(err);
   }
 };
 
-export const metadata = {
-  title: ``,
-  description: "",
-};
+export async function generateMetadata({ params }) {
+  const res = await fetchBlog(params.id);
+  return { title: res.title, description: res.description };
+}
 
 const Blog = async ({ params }) => {
-  const blog = await fetchBlog(params.id, metadata);
+  const blog = await fetchBlog(params.id);
 
   return (
     <>
