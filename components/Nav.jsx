@@ -20,14 +20,14 @@ const Nav = () => {
             onClick={() => {
               setTheme("dark");
             }}
-            className=" h-[1.2rem] w-[1.2rem] rotate-0"
+            className="h-[1.2rem] w-[1.2rem] rotate-0"
           />
         ) : (
           <Sun
             onClick={() => {
               setTheme("light");
             }}
-            className=" h-[1.2rem] w-[1.2rem] rotate-0 "
+            className="h-[1.2rem] w-[1.2rem] rotate-0"
           />
         )}
       </div>
