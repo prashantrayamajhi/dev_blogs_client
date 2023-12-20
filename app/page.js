@@ -3,7 +3,9 @@ import Axios from "@/api/server";
 
 const fetchBlogs = async () => {
   try {
-    const res = await Axios.get("/blogs");
+    const res = await Axios.get("/blogs", {
+      revalidate: 1000,
+    });
     return res.data.data;
   } catch (err) {
     console.log(err);

@@ -2,9 +2,9 @@ import Axios from "@/api/server";
 
 const fetchBlog = async (id) => {
   try {
-    const res = await Axios.get(`/blogs/slug/${id}`);
-    // metadata.title = res.data.data.title;
-    // metadata.description = res.data.data.description;
+    const res = await Axios.get(`/blogs/slug/${id}`, {
+      revalidate: 1000,
+    });
     return res.data.data;
   } catch (err) {
     console.log(err);
